@@ -9,15 +9,14 @@ RUN go install github.com/cosmtrek/air@latest
 # Copy the files we need from our local project to the work directory (WORKDIR)
 COPY go.mod go.sum .air.toml ./
 
-# Copy our all our src files over, air will call build and run on this for us
-COPY ./src ./src
+# Copy our all our go src files over, air will call build and run on this for us
+COPY ./src/main ./src/main
+
+# Copy our static HTML go templates over
+COPY ./src/templates ./../templates
 
 # Download our go packages
 RUN go mod download
-
-# air can handle building our app, but it's slooow.
-# So, build the project here.
-RUN go build ./src/main
 
 # See the .air.toml file's build bin and cmd properties for the specific cmds
 

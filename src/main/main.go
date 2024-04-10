@@ -7,10 +7,10 @@ import (
 )
 
 const (
-	templatesPath = "../templates/*"
+	tmplPath = "../templates/*"
 
-	homePath     = "/"
-	homeTemplate = "home.tmpl"
+	indexPath = "/"
+	indexTmpl = "index.tmpl"
 
 	healthzPath = "/healthz"
 )
@@ -18,16 +18,16 @@ const (
 func main() {
 	r := gin.Default()
 
-	r.LoadHTMLGlob(templatesPath)
+	r.LoadHTMLGlob(tmplPath)
 
 	r.GET(healthzPath, healthz)
-	r.GET(homePath, home)
+	r.GET(indexPath, home)
 
 	r.Run()
 }
 
 func home(c *gin.Context) {
-	c.HTML(200, homeTemplate, gin.H{
+	c.HTML(200, indexTmpl, gin.H{
 		"title": "GoGinAir",
 	})
 }

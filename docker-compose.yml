@@ -4,8 +4,8 @@ services:
     build:
       dockerfile: dockerfile
       context: .
-      target: dev
-    volumes:
-      - .:/app
     ports:
       - "8080:8080"
+    # Important to bind/mount your codebase dir to /app dir for live reload
+    volumes:
+      - ./:/app
