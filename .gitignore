@@ -8,6 +8,10 @@
 *.so
 *.dylib
 
+# Main go executable, built from `go build`
+main
+goginair
+
 # Test binary, built with `go test -c`
 *.test
 
@@ -22,9 +26,6 @@
 
 # Go workspace file
 go.work
-
-main
-goginair
 
 # Air temp directory
 tmp/
