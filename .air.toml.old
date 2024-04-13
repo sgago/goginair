@@ -5,7 +5,7 @@ tmp_dir = "tmp"
 [build]
   args_bin = []
   bin = "./main"
-  cmd = "go build -o ./main ."
+  cmd = "go build -o /tmp/main ./src/main"
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor", "testdata"]
   exclude_file = []
@@ -39,7 +39,7 @@ tmp_dir = "tmp"
   time = false
 
 [misc]
-  clean_on_exit = true
+  clean_on_exit = false
 
 [screen]
   clear_on_rebuild = false
