@@ -39,7 +39,7 @@ func main() {
 
 func index(c *gin.Context) {
 	c.HTML(200, indexTempl, gin.H{
-		"title": "GoGinAircccc",
+		"title": "GoGinAir",
 	})
 }
 
